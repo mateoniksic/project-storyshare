@@ -1,0 +1,10 @@
+/* ==========================================================================
+   USER FOLLOW OR UNFOLLOW FORM
+   ========================================================================== */
+.user-follow-or-unfollow-form {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+}

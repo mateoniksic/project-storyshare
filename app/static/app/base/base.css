@@ -1,0 +1,514 @@
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+:root {
+    /* COLOR */
+    --color-accent-lighten-40: #d8fc82;
+    --color-accent: #befa2e;
+    --color-blue-lighten-85: #dce0f1;
+    --color-blue: #354588;
+    --color-dark-a-10: rgba(0, 0, 0, 0.1);
+    --color-dark-a-25: rgba(0, 0, 0, 0.25);
+    --color-dark-a-75: rgba(0, 0, 0, 0.75);
+    --color-dark: #000;
+    --color-green-lighten-85: #f1f3eb;
+    --color-green: #76874d;
+    --color-light-a-10: rgba(255, 255, 255, 0.1);
+    --color-light-a-25: rgba(255, 255, 255, 0.25);
+    --color-light-a-75: rgba(255, 255, 255, 0.75);
+    --color-light: #fff;
+    --color-primary-lighten-25: #304d76;
+    --color-primary-lighten-5: #162335;
+    --color-primary: #0f1825;
+    --color-red-lighten-85: #fde5de;
+    --color-red: #f05423;
+    --color-yellow-lighten-85: #fbfbd9;
+    --color-yellow: #a48303;
+
+    /* GRADIENT */
+    --color-radial-gradient: radial-gradient(circle at top left, #eea2a2 0%, #bbc1bf 19%, #57c6e1 42%, #b49fda 79%, #7ac5d8 100%);
+
+    /* BORDER */
+    --border-1-color-light: 0.1rem solid var(--color-light);
+    --border-1-color-primary: 0.1rem solid var(--color-primary);
+    --border-1-color-red: 0.1rem solid var(--color-red);
+    --border-1-color-transparent: 0.1rem solid transparent;
+    --border-radius: 0.8rem;
+
+    /* WIDTH */
+    --max-content-width: 108rem;
+    --max-width: 140rem;
+}
+
+/* ==========================================================================
+   BASE
+   ========================================================================== */
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+}
+
+*:focus-visible {
+    outline: 0.2rem solid var(--color-primary);
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+}
+
+body {
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 400;
+    line-height: 1.5em;
+}
+
+/* SCROLLBAR
+   ========================================================================== */
+
+*::-webkit-scrollbar {
+    background-color: var(--color-light-a-75);
+    width: 0.8rem;
+}
+
+*::-webkit-scrollbar-thumb {
+    background: var(--color-dark-a-75);
+    border-radius: 0.1rem;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background: var(--color-dark);
+}
+
+/* ==========================================================================
+   TYPOGRAPHY
+   ========================================================================== */
+
+/* BRAND
+   ========================================================================== */
+
+.brand {
+    font-family: 'Space Grotesk', serif;
+    font-size: 2.369rem;
+    font-weight: 700;
+    line-height: 1.25em;
+}
+
+a:is(:link, :visited).brand__link {
+    border-bottom: 0.1rem solid transparent;
+    color: inherit;
+}
+
+a:is(:hover, :active, :focus).brand__link {
+    border-bottom: 0.1rem solid var(--color-primary);
+    color: inherit;
+}
+
+/* HEADINGS
+   ========================================================================== */
+
+.heading-1 {
+    font-family: 'Space Grotesk', serif;
+    font-size: 4.209rem;
+    font-weight: 700;
+    line-height: 1em;
+}
+
+.heading-2 {
+    font-family: 'Space Grotesk', serif;
+    font-size: 3.157rem;
+    font-weight: 700;
+    line-height: 1.125em;
+}
+
+.heading-3 {
+    font-family: 'Space Grotesk', serif;
+    font-size: 2.369rem;
+    font-weight: 700;
+    line-height: 1.25em;
+}
+
+.heading-4 {
+    font-family: 'Space Grotesk', serif;
+    font-size: 1.777rem;
+    font-weight: 700;
+    line-height: 1.25em;
+}
+
+.heading-5 {
+    font-family: 'Space Grotesk', serif;
+    font-size: 1.333rem;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+.heading-6 {
+    font-family: 'Space Grotesk', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    line-height: 1.5em;
+}
+
+/* TEXT
+   ========================================================================== */
+
+.text-large {
+    font-size: 1.8rem;
+    line-height: 1.75;
+}
+
+.text-small {
+    font-size: 1.4rem;
+    line-height: 1.5;
+}
+
+.text-xsmall {
+    font-size: 1.2rem;
+    line-height: 1.5;
+}
+
+/* TEXT > SPECIAL
+   ========================================================================== */
+
+.text-chip {
+    background-color: var(--color-dark-a-10);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--color-dark);
+    padding: 0.8rem 1.2rem;
+}
+
+/* LINKS
+   ========================================================================== */
+
+a:is(:link, :visited).link {
+    color: inherit;
+    cursor: pointer;
+    display: inline-block;
+    font-family: inherit;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* LINK SIZE */
+a:is(:link, :visited).link--small {
+    font-size: 1.6rem;
+    padding: 0.8rem 1.6rem;
+}
+
+a:is(:link, :visited).link--large {
+    font-size: 1.6rem;
+    padding: 1.6rem 2.4rem;
+}
+
+/* LINK TEXT */
+a:is(:link, :visited).link--text {
+    border-bottom: 0.1rem solid var(--color-primary);
+    padding: 0.4rem;
+}
+
+a:is(:hover, :active, :focus).link--text {
+    background-color: var(--color-accent-lighten-40);
+}
+
+/* LINK BUTTON PRIMARY */
+a:is(:link, :visited).link--button-primary {
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--color-primary);
+    color: var(--color-light);
+}
+
+a:is(:hover, :active, :focus).link--button-primary {
+    background-color: var(--color-primary-lighten-5);
+}
+
+/* LINK BUTTON ACCENT */
+a:is(:link, :visited).link--button-accent {
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--color-accent);
+    color: var(--color-primary);
+}
+
+a:is(:hover, :active, :focus).link--button-accent {
+    background-color: var(--color-accent-lighten-40);
+}
+
+/* LINK BUTTON ACCENT INVERTED */
+a:is(:link, :visited).link--button--accent-inverted {
+    background-color: var(--color-accent-lighten-40);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--color-accent);
+    color: var(--color-primary);
+}
+
+a:is(:hover, :active, :focus).link--button--accent-inverted {
+    background-color: var(--color-accent);
+}
+
+/* BUTTONS
+   ========================================================================== */
+
+button.button {
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.6rem;
+    font-weight: bold;
+    line-height: unset;
+}
+
+button:disabled.button,
+button:disabled:is(:hover, :active, :focus).button {
+    cursor: not-allowed;
+}
+
+/* BUTTON SIZE */
+button.button--large {
+    padding: 1.6rem 2.4rem;
+}
+
+button.button--small {
+    padding: 0.8rem 1.6rem;
+}
+
+/* BUTTON INVISIBLE */
+button.button--invisible {
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--color-primary);
+}
+
+button:is(:hover, :active, :focus).button--invisible {
+    background-color: var(--color-dark-a-25);
+}
+
+/* BUTTON INVISIBLE DANGER */
+button.button--invisible-danger {
+    background-color: transparent;
+    border-radius: var(--border-radius);
+    border: none;
+    color: var(--color-red);
+}
+
+button:is(:hover, :active, :focus).button--invisible-danger {
+    background-color: var(--color-red);
+    color: var(--color-light);
+}
+
+/* BUTTON NEUTRAL */
+button.button--neutral {
+    background-color: var(--color-dark-a-10);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--color-primary);
+    color: var(--color-primary);
+}
+
+button:is(:hover, :active, :focus).button--neutral {
+    background-color: var(--color-dark-a-25);
+}
+
+/* BUTTON DANGER */
+button.button--danger {
+    background-color: var(--color-red-lighten-85);
+    border-radius: var(--border-radius);
+    border: var(--border-1-color-red);
+    color: var(--color-red);
+}
+
+button:is(:hover, :active, :focus).button--danger {
+    background-color: var(--color-red);
+    color: var(--color-light);
+}
+
+/* BUTTON PRIMARY */
+button.button--primary {
+    background-color: var(--color-primary);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--color-primary);
+    color: var(--color-light);
+}
+
+button:is(:hover, :active, :focus).button--primary {
+    background-color: var(--color-primary-lighten-5);
+}
+
+/* BUTTON ACCENT */
+button.button--accent {
+    background-color: var(--color-accent);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--color-accent);
+    color: var(--color-primary);
+}
+
+button:is(:hover, :active, :focus).button--accent {
+    background-color: var(--color-accent-lighten-40);
+}
+
+/* BUTTON ACCENT INVERTED */
+button.button--accent-inverted {
+    background-color: var(--color-accent-lighten-40);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid var(--color-accent);
+    color: var(--color-primary);
+}
+
+button:is(:hover, :active, :focus).button--accent-inverted {
+    background-color: var(--color-accent);
+}
+
+/* ICONS
+   ========================================================================== */
+
+.icon {
+    display: inline-block;
+    fill: currentColor;
+    vertical-align: bottom;
+}
+
+.icon-24 {
+    height: 2.4rem;
+    width: 2.4rem;
+}
+
+.icon-32 {
+    height: 3.2rem;
+    width: 3.2rem;
+}
+
+.icon-text-right {
+    margin-right: 0.8rem;
+}
+
+/* ==========================================================================
+   UTILITIES
+   ========================================================================== */
+
+/* MARGINS
+   ========================================================================== */
+
+.my-32 {
+    margin: 3.2rem 0;
+}
+
+/* MARGIN BOTTOM */
+.mb-64 {
+    margin-bottom: 6.4rem;
+}
+
+.mb-32 {
+    margin-bottom: 3.2rem;
+}
+
+.mb-24 {
+    margin-bottom: 2.4rem;
+}
+
+.mb-16 {
+    margin-bottom: 1.6rem;
+}
+
+.mb-8 {
+    margin-bottom: 0.8rem;
+}
+
+/* IMAGE
+   ========================================================================== */
+
+.img {
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+}
+
+/* BORDERS
+   ========================================================================== */
+
+.border-b1 {
+    border-bottom: var(--border-1-color-primary);
+}
+
+.border-t1 {
+    border-top: var(--border-1-color-primary);
+}
+
+.border-r1 {
+    border-right: var(--border-1-color-primary);
+}
+
+.border-l1 {
+    border-left: var(--border-1-color-primary);
+}
+
+/* ==========================================================================
+   APP > BODY
+   ========================================================================== */
+body {
+    background-image: url('../assets/images/bg-noise.png');
+    background-repeat: repeat;
+    background-size: 8rem;
+}
+
+/* ==========================================================================
+   APP > LAYOUT
+   ========================================================================== */
+.app {
+    align-items: stretch;
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100vh;
+    justify-content: flex-start;
+    overflow: hidden;
+}
+
+.app__container {
+    align-items: stretch;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 3.2rem;
+    height: 100%;
+    justify-content: space-between;
+    min-width: 50rem;
+    overflow-y: auto;
+    padding: 4.8rem 1.6rem 0 1.6rem;
+    width: 100%;
+}
+
+/* APP > SECTION MAIN
+   ========================================================================== */
+.main {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    margin-inline: auto;
+    max-width: var(--max-width);
+    min-width: min-content;
+    width: 100%;
+}
+
+.main__header {
+    backdrop-filter: blur(2rem);
+    background-color: var(--color-light-a-75);
+    border-bottom: var(--border-1-color-primary);
+    margin-top: 0.8rem;
+    padding: 1.6rem 3.2rem;
+    position: sticky;
+    top: -4.8rem;
+    width: 100%;
+    z-index: 9000;
+}
+
+.main__header-title {
+    align-items: center;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: flex-start;
+    width: 100%;
+}

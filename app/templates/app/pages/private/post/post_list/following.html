@@ -1,0 +1,39 @@
+{% extends 'app/pages/private/base/base.html' %}
+{% load static %}
+
+{% block title %}
+    Following
+{% endblock title %}
+
+{% block head %}
+     <!-- PAGE CSS -->
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'app/pages/private/post/post_list/following/style.css' %}" />
+    
+    <!-- INCLUDES CSS -->
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'app/includes/post/post_list/style.css' %}" />
+
+{% endblock head %}
+
+{% block body %}
+
+    {% block main_header %}
+
+        {% with title='Following' icon='heart'  %}
+            {% include 'app/includes/layout/_page_title.html' %}
+        {% endwith %}
+
+    {% endblock main_header %}
+
+    {% block main_content %}
+
+        {% include 'app/includes/post/_post_list.html' %}
+
+    {% endblock main_content %}
+
+{% endblock body %}

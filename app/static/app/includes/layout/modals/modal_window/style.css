@@ -1,0 +1,70 @@
+/* ==========================================================================
+   MODAL WINDOW
+   ========================================================================== */
+.modal-window {
+    backdrop-filter: blur(2rem);
+    background-color: var(--color-light-a-75);
+    border-radius: var(--border-radius);
+    border: var(--border-1-color-primary);
+    height: fit-content;
+    inset: 50% 0 0 50%;
+    overflow: hidden;
+    position: fixed;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 200ms ease-in-out;
+    width: fit-content;
+    z-index: 9002;
+}
+
+.modal-window.is-active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-window__header {
+    align-content: center;
+    align-items: center;
+    background-color: var(--color-light);
+    border-bottom: var(--border-1-color-primary);
+    color: var(--color-primary);
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 2.4rem;
+    justify-content: space-between;
+    padding: 2.4rem 1.6rem;
+}
+
+.modal-overlay {
+    backdrop-filter: blur(0.2rem);
+    background-color: var(--color-dark-a-25);
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    position: fixed;
+    z-index: 9001;
+}
+
+.modal-overlay.is-active {
+    opacity: 1;
+    pointer-events: all;
+}
+
+.modal-window--founf {
+    height: 80rem;
+}
+
+.modal-window__content--founf {
+    height: 100%;
+    max-height: 70rem;
+    min-height: max-content;
+    overflow-y: auto;
+    width: 48rem;
+}
+
+.modal-window__content--user-profile-form {
+    padding: 3.2rem;
+}
+
+.modal-window__content > .user-follow-or-unfollow-form {
+    border-bottom: var(--border-1-color-primary);
+    padding: 1.6rem;
+}

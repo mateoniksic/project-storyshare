@@ -1,0 +1,96 @@
+/* ==========================================================================
+   LAYOUT
+   ========================================================================== */
+.section {
+    background-color: var(--color-primary);
+}
+
+.container {
+    align-items: center;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 3.6rem;
+    height: 100%;
+    isolation: isolate;
+    justify-content: center;
+    margin-inline: auto;
+    max-width: 192rem;
+    min-height: 100vh;
+    overflow: hidden;
+    padding: 6.4rem;
+    width: 100%;
+}
+
+/* MEDIA QUERY
+   ========================================================================== */
+@media (width <= 70.6875rem) {
+    .container {
+        flex-flow: column nowrap;
+        justify-content: flex-start;
+        padding: 4rem 1.6rem;
+    }
+}
+
+/* ==========================================================================
+   FORM
+   ========================================================================== */
+.container__form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2.4rem;
+    justify-content: center;
+}
+
+.container__form__box {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    max-width: 48rem;
+    padding: 5.6rem 5.6rem 4.2rem 5.6rem;
+    width: 100%;
+}
+
+.container__form__box p {
+    text-align: center;
+}
+
+.container__form__box hr {
+    margin-top: 2.4rem;
+    width: 50%;
+}
+
+.container__form__box:last-child {
+    padding: 2.8rem;
+}
+
+/* MEDIA QUERIES */
+@media (width <= 70.6875rem) {
+    .container__form__box {
+        padding: 2.4rem;
+    }
+}
+
+/* ==========================================================================
+   FLASH
+   ========================================================================== */
+.bg--flash {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: var(--border-radius);
+    border: 0.1rem solid #fff;
+    position: relative;
+}
+
+.bg--flash::before {
+    background-image: var(--color-radial-gradient);
+    content: '';
+    filter: blur(10rem);
+    height: 100%;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform-origin: center;
+    transform: translate(-50%, -50%) rotate(16deg);
+    width: 100%;
+    z-index: -1;
+}

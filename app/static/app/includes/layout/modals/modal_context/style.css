@@ -1,0 +1,42 @@
+/* ==========================================================================
+   MODAL CONTEXT
+   ========================================================================== */
+.modal-context {
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+    border: var(--border-1-color-primary);
+    inset: 4.8rem 0 auto auto;
+    overflow: hidden;
+    position: absolute;
+    transform-origin: right;
+    transform: translateY(-50%) scale(0);
+    transition: transform 200ms ease-in-out;
+}
+
+.modal-context__list {
+    list-style: none;
+}
+
+.modal-context__item:not(:last-child) {
+    border-bottom: var(--border-1-color-primary);
+}
+
+.modal-context__item button,
+.modal-context__item a:is(:link, :visited) {
+    border-radius: 0;
+    padding: 1.2rem 3.2rem;
+    text-align: center;
+    width: 100%;
+}
+
+.modal-context__item a:is(:hover, :active, :focus) {
+    background-color: var(--color-dark-a-25);
+}
+
+.modal-context.is-active {
+    transform: translateY(0%) scale(1);
+}
+
+.modal-context button {
+    text-align: left;
+}

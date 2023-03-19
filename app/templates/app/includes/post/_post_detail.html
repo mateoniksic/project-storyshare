@@ -1,0 +1,33 @@
+{% load static %}
+<section class="section-post">
+
+    {% if is_user %}
+        <div class="post__modal-context">
+            {% include 'app/includes/layout/modals/modal_context/_modal_context.html' %}        
+        </div>
+    {% endif %}
+
+    <figure class="post__featured-image">
+        <div class="post__wrapper-featured-image">
+            <img
+                src="{{ post.featured_image }}"
+                alt="{{ post.title }}"
+                class="img" />
+        </div>
+        <figcaption class="post__featured-image-figcaption text-small">"{{ post.title }}"</figcaption>
+    </figure>
+
+    <div class="post__container">
+        <h1 class="post__title heading-1">{{ post.title }}</h1>
+
+        <span class="post__date">Published on {{ post.date_created | date }}</span>
+
+        <div class="post__content text-large">{{ post.content }}</div>
+
+        <div class="post__tags">
+            {% with class="post__tag"  %}
+                {% include 'app/includes/tag/_tag_list.html' %}  
+            {% endwith %}
+        </div>
+    </div>
+</section>

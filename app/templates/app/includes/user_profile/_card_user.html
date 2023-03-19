@@ -1,0 +1,19 @@
+<div class="card-user">
+    <a
+        class="card-user__link "
+        href="{{ member.profile.get_absolute_url }}">
+        <div class="card-user__content-container">
+
+            <div class="card-user__image-wrapper">
+                {% with default='https://ui-avatars.com/api/?name='|add:member.first_name|add:'+'|add:member.last_name %}
+                    <img
+                        class="card-user__image"
+                        src="{{ member.profile.profile_image | default:default }}"
+                        alt="{{ member.first_name }} {{ member.last_name }}" />
+                {% endwith %}
+            </div>
+
+            <span class="card-user__username">@{{ member.username}}</span>
+        </div>
+    </a>
+</div>

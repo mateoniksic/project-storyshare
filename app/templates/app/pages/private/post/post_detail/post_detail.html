@@ -1,0 +1,55 @@
+{% extends 'app/pages/private/base/base.html' %}
+{% load static %}
+
+{% block title %}(@{{ member.username }}) • {{ post.title }}{% endblock title %}
+
+{% block head %}
+    <!-- PAGE CSS -->
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'app/pages/private/post/post_detail/style.css' %}" />
+
+    <!-- INCLUDES CSS -->
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'app/includes/post/post_detail/style.css' %}" />
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'app/includes/layout/modals/modal_context/style.css' %}" />
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'app/includes/user_profile/user_profile_detail/style.css' %}" />
+
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'app/includes/forms/user_follow_or_unfollow_form/style.css' %}" />
+{% endblock head %}
+
+{% block body %}
+
+    {% block main_header %}
+
+        {% include 'app/includes/forms/_user_follow_or_unfollow_form.html' %}
+
+    {% endblock main_header %}
+
+    {% block main_content %}
+
+        {% include 'app/includes/user_profile/_user_profile_detail.html' %}
+
+        {% include 'app/includes/post/_post_detail.html' %}
+
+    {% endblock main_content %}
+
+    {% block script %}
+        <script src="{% static 'app/includes/layout/modals/modal_context/index.js' %}"></script>
+    {% endblock script %}
+
+{% endblock body %}

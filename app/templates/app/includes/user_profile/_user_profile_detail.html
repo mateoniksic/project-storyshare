@@ -1,0 +1,78 @@
+{% load static %}
+<section class="user-profile-detail">
+    <div class="user-profile-detail__section-container">
+        
+
+        <div class="user-profile-detail__profile-image">
+            {% with default='https://ui-avatars.com/api/?name='|add:member.first_name|add:'+'|add:member.last_name %}
+                <img
+                class="img"
+                src="{{ member.profile.profile_image | default:default }}"
+                alt="{{ member.first_name }} {{ member.last_name }}" />
+            {% endwith %}
+        </div>
+
+        
+        <div class="user-profile-detail__content-container">
+            
+            <div class="user-profile-detail__user-name">
+
+                <a
+                href="{{ member.profile.get_absolute_url }}" 
+                class="link link--text">
+                
+                    <span class="heading-3">{{ member.first_name }} {{ member.last_name }}</span>
+                    
+                </a>
+                
+                {% if is_user %}
+                    <button
+                    data-modal-window-target="#modal-window-user-profile-form"
+                    class="button button--small button--primary">
+                    Edit
+                    </button>
+                {% endif %}
+            
+        </div>
+
+        <p class="user-profile-detail__user-description text-large">
+            {{ member.profile.description | default:'' }}
+            </p>
+            
+            
+            <div class="user-profile-detail__user-statistics">
+                
+                <span class="text-chip">
+                    {{ member.profile.posts.all | length }} Posts
+                </span>
+                
+                <button
+                    type="button"
+                    class="button button--neutral button--small"
+                    data-modal-window-target="#modal-window-followers">
+                    {{ member.profile.followers.all | length }} Followers
+                </button>
+                
+                <button
+                type="button"
+                class="button button--neutral button--small"
+                data-modal-window-target="#modal-window-following">
+                {{ member.profile.following.all | length }} Following
+                </button>
+
+            </div>
+
+        </div>
+
+    {% include 'app/includes/layout/modals/modal_window/_modal_window_followers.html' %}
+
+    {% include 'app/includes/layout/modals/modal_window/_modal_window_following.html' %}
+
+    {% if is_user %}
+        {% with form=user_profile_form %}
+            {% include 'app/includes/layout/modals/modal_window/_modal_window_user_profile_form.html' %}
+        {% endwith %}
+    {% endif %}
+
+    </div>
+</section>

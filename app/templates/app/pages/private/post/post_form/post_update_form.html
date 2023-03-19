@@ -1,0 +1,34 @@
+{% extends 'app/pages/private/base/base.html' %}
+{% load static %}
+
+{% block title %}Update story{% endblock title %}
+
+{% block head %}
+    <!-- PAGE CSS -->
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href="{% static 'app/pages/private/post/post_form/post_update_form/style.css' %}" />
+
+    <!-- INCLUDES CSS -->
+{% endblock head %}
+
+{% block body %}
+
+    {% block main_header %}
+
+        {% include 'app/includes/layout/_page_title.html' with icon='edit' title='Update story' %}
+
+    {% endblock main_header %}
+
+    {% block main_content %}
+
+        <div class="main__content-container">
+            {% with form_submit_value='Update story'  %}
+                {% include 'app/includes/forms/_post_form.html' %}
+            {% endwith %}
+        </div>
+
+    {% endblock main_content %}
+
+{% endblock body %}
