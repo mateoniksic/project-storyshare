@@ -226,7 +226,7 @@ class PostDetailView(LoginRequiredMixin, generic.DetailView):
             context.update({
                 'member': user,
                 'is_user': True,
-                'user_profile_form': UserProfileForm(instance=self.object),
+                'user_profile_form': UserProfileForm(instance=user.profile),
             })
 
         return context
