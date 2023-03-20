@@ -1,9 +1,11 @@
 ![Social Preview](https://user-images.githubusercontent.com/57192709/226341894-4f2a6562-a40e-4b18-b07c-b80f2631556e.png)
 
 # What is StoryShare?
-StoryShare is a web-based social sharing application that helps individuals share words of wisdom, lessons learned, and advice with people around the world. 
+StoryShare is a web-based social sharing platform designed to help people connect and share meaningful insights with each other. It's an online web-based application that encourages individuals to spread words of wisdom, lessons learned, and valuable advice to others across the globe.
 
-Anyone can join! You can create a free account, follow interesting individuals, and share your personal stories.
+Whether you're a student, professional, or anyone in between, StoryShare is open to all. You can easily create a free account and start following interesting individuals to see what they have to share. Moreover, you can also contribute your own personal stories and experiences with the community, helping to inspire and motivate others.
+
+Joining StoryShare is a great way to connect with like-minded individuals, share your experiences, and gain valuable insights from others around the world. With a user-friendly interface and a vast network of users, StoryShare is an excellent platform for anyone who values learning and personal growth.
 
 # What was the development process?
 1. Created models *(UserProfile, Post, Tags)* with relationships one to one, one to many, many to many.
