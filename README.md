@@ -7,7 +7,7 @@ Anyone can join! You can create a free account, follow interesting individuals, 
 
 # What was the development process?
 1. Created models *(UserProfile, Post, Tags)* with relationships one to one, one to many, many to many.
-2. Created factories for models using Faker *(UserFactory, UserProfileFactory, TagFactory, PostFactory)* and generated fake data in bulk using command/script: **`python manage.py build_test_data`**
+2. Created factories for models using Faker *(UserFactory, UserProfileFactory, TagFactory, PostFactory)* and generated fake data in bulk using command/script: `python manage.py build_test_data`
 3. Used Django Class-Based-Views *(create, list/detail, update, delete)* to process data from models and forms.
 4. Used Django Templating Language *(DTL)* to create templates and template components for views using HTML, CSS (BEM) and Javascript.
 5. Wrote 51 unit test(s) for urls, models and views.
