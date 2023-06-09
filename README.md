@@ -1,4 +1,4 @@
-![Social Preview](https://user-images.githubusercontent.com/57192709/226341894-4f2a6562-a40e-4b18-b07c-b80f2631556e.png)
+![Social Preview](https://github.com/mateoniksic/project-storyshare/assets/57192709/0f5a4e79-3016-4dcf-b4b4-777074af96c4)
 
 # What is StoryShare?
 StoryShare is a web-based social sharing platform designed to help people connect and share meaningful insights with each other. It's an online web-based application that encourages individuals to spread words of wisdom, lessons learned, and valuable advice to others across the globe.
