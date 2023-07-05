@@ -5,11 +5,9 @@ from django.contrib.auth.models import User
 from ...models import *
 from ...tests.factories import *
 
-
-NUM_CREATOR_PROFILES = 50
-NUM_POSTS = 250
-NUM_TAGS = 50
-
+NUM_CREATOR_PROFILES = 199
+NUM_POSTS = 499
+NUM_TAGS = 99
 
 class Command(BaseCommand):
     help = "Generates test data"

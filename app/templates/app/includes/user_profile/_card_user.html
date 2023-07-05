@@ -5,12 +5,10 @@
         <div class="card-user__content-container">
 
             <div class="card-user__image-wrapper">
-                {% with default='https://ui-avatars.com/api/?name='|add:member.first_name|add:'+'|add:member.last_name %}
-                    <img
-                        class="card-user__image"
-                        src="{{ member.profile.profile_image | default:default }}"
-                        alt="{{ member.first_name }} {{ member.last_name }}" />
-                {% endwith %}
+                <img
+                    class="card-user__image"
+                    src="{{ member.profile.profile_image }}"
+                    alt="{{ member.first_name }} {{ member.last_name }}" />
             </div>
 
             <span class="card-user__username">@{{ member.username}}</span>

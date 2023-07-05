@@ -22,9 +22,9 @@ class UserProfile(models.Model):
         'self', symmetrical=False, related_name='followers', blank=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
+    #! Disable if using python manage.py build_test_data command.
     @receiver(post_save, sender=User)
     def create_user_profile(sender, instance, created, **kwargs):
-        #! Disable if using python manage.py build_test_data command.
         if created:
             user_profile = UserProfile.objects.create(user=instance)
             user_profile.following.add(user_profile)
