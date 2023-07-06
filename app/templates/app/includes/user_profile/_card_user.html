@@ -8,7 +8,7 @@
                 {% with default='https://ui-avatars.com/api/?uppercase=true&bold=true&background=%23d8fc82&color=%230f1825&format=svg&name='|add:member.first_name|add:'+'|add:member.last_name %}
                 <img
                     class="card-user__image"
-                    src="{{ member.profile.profile_image }}"
+                    src="{{ member.profile.profile_image | default:default}}"
                     alt="{{ member.first_name }} {{ member.last_name }}" />
                 {% endwith %}
             </div>
