@@ -4,7 +4,7 @@
         
 
         <div class="user-profile-detail__profile-image">
-            {% with default='https://ui-avatars.com/api/?name='|add:member.first_name|add:'+'|add:member.last_name %}
+            {% with default='https://ui-avatars.com/api/?uppercase=true&bold=true&background=%23d8fc82&color=%230f1825&format=svg&name='|add:member.first_name|add:'+'|add:member.last_name %}
                 <img
                 class="img"
                 src="{{ member.profile.profile_image | default:default }}"
